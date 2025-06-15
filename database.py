@@ -27,10 +27,10 @@ def create_patient(data):
     return convert(patient)
 
 def get_all_patients():
-    return [serialize(p) for p in collection.find()]
+    return [convert(p) for p in collection.find()]
 
 
 def get_patient_by_id(id):
     patient = collection.find_one({"_id": ObjectId(id)})
-        return serialize(patient)
+        return convert(patient)
     
