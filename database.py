@@ -32,5 +32,5 @@ def get_all_patients():
 
 def get_patient_by_id(id):
     patient = collection.find_one({"_id": ObjectId(id)})
-        return convert(patient)
+    return convert(patient)
     
