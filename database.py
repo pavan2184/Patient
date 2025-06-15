@@ -15,8 +15,9 @@ def convert(patient):
         "name": patient["name"],
         "age": patient["age"],
         "condition": patient["condition"],
-        "created_at": patient["created_at"]
+        "created_at": int(patient["created_at"].timestamp()) 
     }
+
 
 
 def create_patient(data):

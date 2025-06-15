@@ -5,8 +5,9 @@ class PatientCreate(BaseModel):
     name: str
     age: int
     condition: str
+    created_at: datetime
 
 class Patient(PatientCreate):
     id: str 
-    created_at: int = Field(default_factory=lambda: int(datetime.timestamp(datetime.now())))
+    
 
