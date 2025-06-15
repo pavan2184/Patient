@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from models import PatientCreate, Patient
+from models import Patient, PatientCreate
 import database
 
 app = FastAPI()
