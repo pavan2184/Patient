@@ -1,0 +1,20 @@
+from fastapi import FastAPI
+from models import PatientCreate, Patient
+import database
+
+app = FastAPI()
+
+@app.post("/patients", response_model=Patient)
+def add_patient(patient: PatientCreate):
+    return database.create_patient(patient)
+
+@app.get("/patients", response_model=list[Patient])
+def list_patients():
+    return database.get_all_patients()
+
+@app.get("/patients/{pid}", response_model=Patient)
+def get_patient(pid: str):
+    patient = database.get_patient_by_id(pid)
+    if not patient:
+        raise HTTPException(status_code=404, detail="Patient not found")
+    return patient
