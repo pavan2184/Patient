@@ -3,11 +3,9 @@ from bson import ObjectId
 from models import Patient,PatientCreate
 from datetime import datetime
 
-
 client = MongoClient("mongodb://localhost:27017")
 db = client.patientdb
 collection = db.patients
-
 
 def convert(patient):
     return {
