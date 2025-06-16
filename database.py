@@ -17,7 +17,6 @@ def convert(patient):
     }
 
 
-
 def create_patient(data):
     doc = data.dict()
     doc["created_at"] = datetime.utcnow()

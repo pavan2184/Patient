@@ -20,4 +20,3 @@ def get_patient(pid: str):
     if patient:
         return patient
     return {"message": "Patient not found"}
-
